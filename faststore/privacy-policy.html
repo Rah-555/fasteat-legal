@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>นโยบายความเป็นส่วนตัว — FastEat</title>
+<style>
+  :root { --sage:#72845E; --ink:#2b2b2b; --muted:#6b6b6b; --cream:#faf8f3; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+         color:var(--ink); background:var(--cream); line-height:1.7; margin:0; }
+  .wrap { max-width:760px; margin:0 auto; padding:40px 22px 80px; }
+  h1 { color:var(--sage); font-size:1.9rem; margin-bottom:4px; }
+  h2 { color:var(--sage); font-size:1.2rem; margin-top:34px; }
+  .meta { color:var(--muted); font-size:.9rem; margin-bottom:8px; }
+  a { color:var(--sage); }
+  ul { padding-left:20px; }
+  code { background:#eee7d8; padding:1px 5px; border-radius:4px; }
+  footer { margin-top:50px; border-top:1px solid #e3ddd0; padding-top:18px; color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>นโยบายความเป็นส่วนตัว</h1>
+  <p class="meta">FastEat — แอป FastQ และ FastStore · มีผลบังคับใช้: 20 กรกฎาคม 2569 (2026)</p>
+
+  <p>นโยบายนี้อธิบายว่าเราเก็บ ใช้ และคุ้มครองข้อมูลส่วนบุคคลของคุณอย่างไร เมื่อคุณใช้งานแอป
+  <strong>FastQ</strong> (แอปสำหรับลูกค้าสั่งอาหาร) และ <strong>FastStore</strong> (แอปสำหรับร้านค้า/ผู้ขาย)
+  ซึ่งเป็นส่วนหนึ่งของระบบ FastEat — ระบบสั่ง จ่าย และจัดคิวอาหารในโรงอาหาร</p>
+
+  <h2>1. ข้อมูลที่เราเก็บ</h2>
+  <ul>
+    <li><strong>ข้อมูลบัญชี:</strong> อีเมล และชื่อที่แสดง (เมื่อสมัคร/เข้าสู่ระบบด้วยอีเมล, Google หรือ Sign in with Apple)</li>
+    <li><strong>ตัวระบุผู้ใช้ (User ID):</strong> รหัสบัญชีภายในระบบ เพื่อเชื่อมข้อมูลออเดอร์กับบัญชีของคุณ</li>
+    <li><strong>ประวัติการสั่งซื้อ:</strong> รายการอาหาร ร้าน จำนวนเงิน และสถานะออเดอร์</li>
+    <li><strong>รูปภาพที่คุณอัปโหลด:</strong> รูปสลิปการโอนเงิน (FastQ) เพื่อยืนยันการชำระเงิน · รูปเมนูและโลโก้ร้าน (FastStore)</li>
+    <li><strong>ข้อมูลวินิจฉัยปัญหา:</strong> ข้อมูลการขัดข้องของแอป (crash) แบบไม่ระบุตัวตน เพื่อแก้ไขข้อบกพร่อง</li>
+  </ul>
+  <p>เรา<strong>ไม่</strong>เก็บข้อมูลตำแหน่งที่ตั้ง ไม่เก็บข้อมูลบัตรเครดิต และไม่ติดตามพฤติกรรมของคุณข้ามแอปหรือเว็บไซต์ของบริษัทอื่น</p>
+
+  <h2>2. เราใช้ข้อมูลอย่างไร</h2>
+  <ul>
+    <li>เพื่อให้บริการสั่งอาหาร ชำระเงิน และแสดงสถานะคิว/ออเดอร์</li>
+    <li>เพื่อยืนยันการชำระเงินผ่านสลิป PromptPay</li>
+    <li>เพื่อให้ร้านค้าจัดการเมนู ออเดอร์ และการขาย</li>
+    <li>เพื่อดูแลความปลอดภัยของบัญชีและปรับปรุงแอป</li>
+  </ul>
+
+  <h2>3. การเปิดเผยข้อมูลแก่ผู้ให้บริการภายนอก</h2>
+  <p>เราใช้ผู้ให้บริการภายนอกเท่าที่จำเป็นในการให้บริการ:</p>
+  <ul>
+    <li><strong>Supabase</strong> — จัดเก็บฐานข้อมูลและไฟล์ (โครงสร้างพื้นฐานของระบบ)</li>
+    <li><strong>SlipOK</strong> — ตรวจสอบความถูกต้องของสลิปการโอนเงิน</li>
+    <li><strong>Sentry</strong> — รายงานข้อขัดข้องของแอป (ไม่ระบุตัวตน)</li>
+    <li><strong>Apple / Google</strong> — บริการเข้าสู่ระบบ (Sign in with Apple / Google Sign-In)</li>
+  </ul>
+  <p>เรา<strong>ไม่ขาย</strong>ข้อมูลส่วนบุคคลของคุณ และไม่ใช้ข้อมูลเพื่อการโฆษณา</p>
+
+  <h2>4. การเก็บรักษาและความปลอดภัย</h2>
+  <p>เราเก็บข้อมูลไว้ตราบเท่าที่บัญชีของคุณยังใช้งานอยู่ หรือเท่าที่จำเป็นตามกฎหมาย
+  ข้อมูลถูกส่งผ่านการเข้ารหัส HTTPS/TLS และควบคุมการเข้าถึงด้วยระบบสิทธิ์ (Row Level Security)</p>
+
+  <h2>5. สิทธิของคุณ</h2>
+  <p>คุณมีสิทธิเข้าถึง แก้ไข หรือขอลบข้อมูลส่วนบุคคลและบัญชีของคุณ ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA)
+  หากต้องการลบบัญชีหรือข้อมูล โปรดติดต่อเราตามช่องทางด้านล่าง</p>
+
+  <h2>6. เด็กและเยาวชน</h2>
+  <p>แอปนี้เหมาะสำหรับผู้ใช้ทุกวัย (4+) และไม่ได้มุ่งเก็บข้อมูลจากเด็กโดยเฉพาะ</p>
+
+  <h2>7. การเปลี่ยนแปลงนโยบาย</h2>
+  <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว โดยจะปรับวันที่มีผลบังคับใช้ด้านบน</p>
+
+  <h2>8. ติดต่อเรา</h2>
+  <p>อีเมล: <a href="mailto:lar47922@gmail.com">lar47922@gmail.com</a></p>
+
+  <footer>© 2026 FastEat. สงวนลิขสิทธิ์.</footer>
+</div>
+</body>
+</html>
